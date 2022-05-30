@@ -1,8 +1,10 @@
 const express = require('express');
 const tinker = express();
 
+tinker.use(express.static(__dirname + '/public'));
+
 tinker.get('/', function(req, res) {
-    res.send('hello tinker');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 tinker.use(function(req, res) {
