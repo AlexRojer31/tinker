@@ -1,7 +1,7 @@
 {
   "name": "tinker",
   "version": "1.0.0",
-  "description": "Single application space for automating your enterprise",
+  "description": "Single digital space for enterprise applications",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
