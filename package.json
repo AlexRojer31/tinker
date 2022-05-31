@@ -2,9 +2,9 @@
   "name": "tinker",
   "version": "1.0.0",
   "description": "Single digital space for enterprise applications",
-  "main": "index.js",
+  "main": "tinker.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node tinker.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alexandr Ronzhin",
