@@ -1,5 +1,5 @@
 import { div } from './div.js';
-import { navigationLabel } from './navigationLabel.js';
+import { navigationLabelFactory } from './navigationLabelFactory.js';
 
 export {navigation};
 
@@ -22,12 +22,12 @@ function navigation() {
     }
 
     this.setLabels = function(navigation) {
-        let navigationLabelFactory = new navigationLabel();
+        let factory = new navigationLabelFactory();
 		for (let i = 0; i < 5; i++) {
-            let first = navigationLabelFactory.render('bg.png', () => {
+            let label = factory.render('bg.png', () => {
 				alert('test - ' + i);
 			});
-            navigation.appendChild(first);
+            navigation.appendChild(label);
 		}
     }
 }

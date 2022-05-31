@@ -2,9 +2,9 @@ import { float } from './float.js';
 import { img } from './img.js';
 import {headline} from './headline.js';
 
-export {label};
+export {labelFactory};
 
-function label() {
+function labelFactory() {
 
     this.render = function(src, title, callback) {
         let label = float(); 

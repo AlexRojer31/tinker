@@ -22,7 +22,9 @@ function context() {
 	
 	this.close = function() {
 		let context = document.getElementById('context');
-		body.removeChild(context);
+		if (context !== null) {
+			body.removeChild(context);
+		}
 	}
 	
 	this.render = function() {

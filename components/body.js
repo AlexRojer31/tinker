@@ -1,6 +1,6 @@
 import { context } from './context.js';
 import { navigation } from './navigation.js';
-import { label } from './label.js';
+import { labelFactory } from './labelFactory.js';
 
 export {body};
 
@@ -60,12 +60,12 @@ function body() {
 	}
 
 	this.setLabels = function() {
-		let labelFactory = new label();
+		let factory = new labelFactory();
 		for (let i = 0; i < 10; i++) {
-			let first = labelFactory.render('bg.png', 'first App', () => {
+			let label = factory.render('bg.png', 'first App', () => {
 				alert('test - ' + i);
 			});
-			body.appendChild(first);
+			body.appendChild(label);
 		}
 	}
 	

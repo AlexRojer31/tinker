@@ -1,12 +1,12 @@
-import { label } from './label.js';
+import { labelFactory } from './labelFactory.js';
 
-export {navigationLabel};
+export {navigationLabelFactory};
 
-function navigationLabel() {
+function navigationLabelFactory() {
     
     this.render = function(src, callback) {
-        let labelFactory = new label();
-        let navigationLabel = labelFactory.render(src, '');
+        let factory = new labelFactory();
+        let navigationLabel = factory.render(src, '');
         navigationLabel.style.width = '40px';
         navigationLabel.style.margin = '5px';
         navigationLabel.style.overflow = 'hidden';
