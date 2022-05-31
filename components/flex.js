@@ -1,11 +1,9 @@
-import { div } from "./div";
+import { div } from './div.js';
 
 export {flex};
 
 function flex() {
-
-    this.render = function() {
-
-    }
-    
+    let flex = div();
+    flex.style.display = 'flex';
+    return flex;
 }

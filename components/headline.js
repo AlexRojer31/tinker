@@ -1,9 +1,6 @@
 export {headline};
 
-function headline() {
-
-    this.render = function() {
-
-    }
-    
+function headline(size) {
+    let headline = document.createElement('h' + size);
+    return headline;
 }

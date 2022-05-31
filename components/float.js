@@ -1,11 +1,9 @@
-import { div } from "./div";
+import { div } from './div.js';
 
 export {float};
 
 function float() {
-
-    this.render = function() {
-
-    }
-    
+    let float = div();
+    float.style.float = 'left';
+    return float;
 }

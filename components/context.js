@@ -26,7 +26,7 @@ function context() {
 	}
 	
 	this.render = function() {
-		let context = new div();
+		let context = div();
 		context.id = 'context';
 		this.style(context);
 		body.appendChild(context);
@@ -42,7 +42,7 @@ function context() {
 	}
 	
 	this.action = function(name, action) {
-		let p = new paragraf();
+		let p = paragraf();
         p.innerHTML = name;
 		p.style.color = 'black';
 		p.style.textAlign = 'center';

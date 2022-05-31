@@ -1,5 +1,6 @@
 import { context } from './context.js';
 import { navigation } from './navigation.js';
+import { label } from './label.js';
 
 export {body};
 
@@ -12,11 +13,21 @@ function body() {
 		this.setStyle();
 		this.setContext();
 		this.setNavigation();
+		this.setLabels();
 	}
 	
 	this.setStyle = function() {
 		body.style.position = 'relative';
-		this.background();
+		this.setBackground();
+	}
+	
+	this.setBackground = function() {
+		body.style.backgroundImage = 'url("bg.png")';
+		body.style.backgroundRepeat = 'no-repeat';
+		body.style.backgroundPosition = 'center center';
+		body.style.backgroundAttachment = 'fixed';
+		body.style.backgroundAttachment = '100%';
+		body.style.backgroundSize = 'cover';
 	}
 	
 	this.setContext = function() {
@@ -47,14 +58,15 @@ function body() {
 		let navigationBar = new navigation();
 		body.appendChild(navigationBar.render());
 	}
-	
-	this.background = function() {
-		body.style.backgroundImage = 'url("bg.png")';
-		body.style.backgroundRepeat = 'no-repeat';
-		body.style.backgroundPosition = 'center center';
-		body.style.backgroundAttachment = 'fixed';
-		body.style.backgroundAttachment = '100%';
-		body.style.backgroundSize = 'cover';
+
+	this.setLabels = function() {
+		let labelFactory = new label();
+		for (let i = 0; i < 10; i++) {
+			let first = labelFactory.render('bg.png', 'first App', () => {
+				alert('test - ' + i);
+			});
+			body.appendChild(first);
+		}
 	}
 	
 }

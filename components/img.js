@@ -1,9 +1,6 @@
 export {img};
 
 function img() {
-
-    this.render = function() {
-
-    }
-    
+    let img = document.createElement('img');
+    return img;
 }
