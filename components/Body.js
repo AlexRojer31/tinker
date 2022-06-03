@@ -22,18 +22,11 @@ class Body {
 		}
         this.#body.id = 'body';
         this.#toolBar = new ToolBar();
-		this.#toolBar.render(this.#body);
-		this.#toolBar.setLabel(
-			new Label('', 'bg.png', () => {
-				new Application('My first application').render();
-			}));
-		this.#toolBar.setLabel(
-			new Label('', 'bg.png', () => {
-				new Application('My second application').render();
-			}));
+		this.#contextToolBar = new ContextToolBar();
         this.#setStyle();
 		this.#setLabels();
-		this.#contextToolBar = new ContextToolBar();
+		this.#setToolBar();
+		this.#setContextToolBar();
     }
 	
 	#setStyle() {
@@ -51,6 +44,26 @@ class Body {
             new Application('My Body App').render();
         })
         .render(this.#body);
+	}
+
+	#setToolBar() {
+		this.#toolBar.render(this.#body);
+		this.#toolBar.setLabel(
+			new Label('', 'bg.png', () => {
+				new Application('My first application').render();
+			}));
+		this.#toolBar.setLabel(
+			new Label('', 'bg.png', () => {
+				new Application('My second application').render();
+			}));
+	}
+
+	#setContextToolBar() {
+		document.addEventListener('contextmenu', () => {
+			event.stopPropagation();
+			event.preventDefault();
+			alert('context');
+		});
 	}
 
 }

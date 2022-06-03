@@ -22,11 +22,12 @@ class ToolBar {
 
     #createComponent() {
         this.#toolBar = document.createElement('div');
+        this.#toolBar.classList.add('clearfix');
     }
 
     #setStyle() {
         this.#toolBar.style.width = '100%';
-        this.#toolBar.style.height = '40px';
+        this.#toolBar.style.height = 'auto';
         this.#toolBar.style.backgroundColor = 'black';
         this.#toolBar.style.position = 'fixed';
         this.#toolBar.style.bottom = '0';
