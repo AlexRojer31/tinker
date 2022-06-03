@@ -1,5 +1,5 @@
-import { body } from './body.js';
+import { Body } from './Body.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    new body().render();
+    new Body();
 });
