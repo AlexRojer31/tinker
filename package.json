@@ -5,7 +5,7 @@
   "main": "tinker.js",
   "scripts": {
     "start": "node tinker.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon tinker.js"
   },
   "author": "Alexandr Ronzhin",
   "license": "AGPL-3.0-or-later",
