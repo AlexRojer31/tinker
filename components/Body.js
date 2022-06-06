@@ -1,7 +1,9 @@
 import { BodyToolBar } from "./BodyToolBar.js";
-import { Label } from "./Label.js";
+import { BodyToolBarLabel } from "./BodyToolBarLabel.js";
 import { Application } from "./Application.js";
 import { ContextToolBar } from "./ContextToolBar.js";
+import { ContextToolBarLabel } from "./ContextToolBarLabel.js";
+import { BodyLabel } from "./BodyLabel.js";
 
 export {Body};
 
@@ -28,9 +30,9 @@ class Body {
     }
 
     #setContextToolBarEvents() {
-		this.#bodyContextToolBar.addLabel('review', 'bg.png', () => {
+		this.#bodyContextToolBar.addLabel(new ContextToolBarLabel('review', 'bg.png', () => {
 			document.location.href = '/';
-		});
+		}));
     }
 
     #setEventListeners() {
@@ -55,7 +57,7 @@ class Body {
 	}
 	
 	#setBodyLabels() {
-		new Label('My App', 'bg.png', () => {
+		new BodyLabel('My App', 'bg.png', () => {
             new Application('My Body App').render();
         })
         .render(this.#body);
@@ -63,13 +65,9 @@ class Body {
 
 	#setBodyToolBar() {
 		this.#bodyToolBar.render(this.#body);
-		this.#bodyToolBar.setLabel(
-			new Label('', 'bg.png', () => {
+		this.#bodyToolBar.addLabel(
+			new BodyToolBarLabel('', 'bg.png', () => {
 				new Application('My first application').render();
-			}));
-		this.#bodyToolBar.setLabel(
-			new Label('', 'bg.png', () => {
-				new Application('My second application').render();
 			}));
 	}
 

@@ -1,4 +1,5 @@
 import { ContextToolBar } from "./ContextToolBar.js";
+import { ContextToolBarLabel } from "./ContextToolBarLabel.js";
 
 export {Application};
 
@@ -331,9 +332,9 @@ class Application {
     }
 
     #setContextToolBarEvents() {
-        this.#applicationContextToolBar.addLabel('close', 'bg.png', this.#applicationEvents.get('close'));
-        this.#applicationContextToolBar.addLabel('expand', 'bg.png', this.#applicationEvents.get('expand'));
-        this.#applicationContextToolBar.addLabel('roll', 'bg.png', this.#applicationEvents.get('roll'));
+		this.#applicationContextToolBar.addLabel(new ContextToolBarLabel('close', 'bg.png', this.#applicationEvents.get('close')));
+		this.#applicationContextToolBar.addLabel(new ContextToolBarLabel('expand', 'bg.png', this.#applicationEvents.get('expand')));
+		this.#applicationContextToolBar.addLabel(new ContextToolBarLabel('roll', 'bg.png', this.#applicationEvents.get('roll')));
     }
 
     #setEventListeners() {

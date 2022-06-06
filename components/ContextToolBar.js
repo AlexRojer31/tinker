@@ -14,6 +14,9 @@ class ContextToolBar {
 
     constructor() {
         this.#setStyle();
+        this.#toolBar.addEventListener('click', () => {
+            this.#toolBar.parentElement.removeChild(this.#toolBar);
+        });
     }
 
     render(parent) {
@@ -31,26 +34,7 @@ class ContextToolBar {
 		this.#toolBar.style.zIndex = '1000000';
     }
 	
-	addLabel(name = 'default', icon = 'bg.png' , action = () => {}) {
-        let box = document.createElement('div');
-        box.classList.add('clearfix');
-		box.classList.add('button');
-        let img = document.createElement('img');
-        img.src = icon;
-        img.title = name;
-        img.style.float = 'left';
-        img.style.width = '30px';
-        img.style.marginRight = '10px';
-        let headline = document.createElement('h3');
-        headline.innerHTML = name;
-        headline.style.float = 'left';
-        headline.style.color = 'white';
-        box.appendChild(img);
-        box.appendChild(headline);
-        box.addEventListener('click', action);
-        box.addEventListener('click', () => {
-            this.#toolBar.parentElement.removeChild(this.#toolBar);
-        });
-        this.#toolBar.appendChild(box);
+	addLabel(ContextToolBarLabel) {
+        ContextToolBarLabel.render(this.#toolBar);
 	}
 }
