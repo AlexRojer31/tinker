@@ -1,6 +1,6 @@
-export {Label};
+export {ToolBar};
 
-class Label {
+class ToolBar {
 
     constructor() {
         
@@ -9,5 +9,4 @@ class Label {
     render() {
         
     }
-
 }
