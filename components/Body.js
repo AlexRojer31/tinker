@@ -69,8 +69,14 @@ class Body {
 	#setBodyToolBar() {
 		this.#bodyToolBar.render(this.#body);
 		this.#bodyToolBar.addLabel(
-			new BodyToolBarLabel('Bodytoolbar Label', 'bg.png', () => {
-				new Application('Bodytoolbar Label').render();
+			new BodyToolBarLabel('CRUD CORS', 'bg.png', () => {
+				let app = new Application('CRUD CORS');
+				let ajax = new Ajax().get('http://home.alexrojer31.ru:8100/simple', show);
+				function show() {
+					let user = JSON.parse(ajax.response);
+					app.getWorkSpace().innerHTML = user.name;
+					app.render();
+				}
 			}));
 	
 
