@@ -1,0 +1,15 @@
+{
+  "name": "tinker",
+  "version": "1.0.0",
+  "description": "Single digital space for enterprise applications",
+  "main": "tinker.js",
+  "scripts": {
+    "start": "node tinker.js",
+    "test": "nodemon tinker.js"
+  },
+  "author": "Alexandr Ronzhin",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
